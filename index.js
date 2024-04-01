@@ -153,7 +153,7 @@ io.on('connection', (socket) => {
 
     // Check if mid-queue disconnection
     if (!room) {
-      console.log("No room, removing from queue");
+      console.log('No room, removing from queue');
       // Logic for disconnect while in queue
       const arg = (id) => id.socketId == socket.id;
       const i = usersQueue.findIndex(arg);
@@ -185,4 +185,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3001, () => console.log('Server started on port 3001'));
+const fluxeAddress = 'https://fluxe-client-1cd1216f2c42.herokuapp.com/' || 3001;
+
+server.listen(fluxeAddress, () => console.log('Server started listenning to fluxe'));
