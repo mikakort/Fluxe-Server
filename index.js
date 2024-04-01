@@ -185,6 +185,6 @@ io.on('connection', (socket) => {
   });
 });
 
-const fluxeAddress = 'https://fluxe-client-1cd1216f2c42.herokuapp.com/' || 3001;
+const fluxeAddress = process.env.FLUXE || 3001;
 
 server.listen(fluxeAddress, () => console.log('Server started listenning to fluxe'));
