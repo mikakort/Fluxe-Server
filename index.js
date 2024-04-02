@@ -187,4 +187,4 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(port, () => console.log('Server started listenning to fluxe'));
+server.listen(port, () => console.log('Server started listenning on port: ', port));
