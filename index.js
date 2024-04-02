@@ -11,12 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const fluxeAddress = process.env.FLUXE || 3001;
+const port = process.env.PORT;
 
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: fluxeAddress,
+    origin: '*',
     methods: ['GET', 'POST'],
   },
 });
@@ -187,4 +187,4 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(fluxeAddress, () => console.log('Server started listenning to fluxe'));
+server.listen(port, () => console.log('Server started listenning to fluxe'));
